@@ -1,1 +1,1 @@
-# esp8266_captive_portal
+# Captive portal implemention
