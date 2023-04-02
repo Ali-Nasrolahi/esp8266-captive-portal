@@ -1,4 +1,1 @@
-# Captive portal implemention
-
-
-ESP8266 version.
+# Captive portal implementation
