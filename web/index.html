@@ -2,24 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Login Page with Background Image Example</title>
+    <title></title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <div id="bg"></div>
-
-    <form>
-      <div class="form-field">
-        <input type="email" placeholder="Email / Username" required />
-      </div>
-
-      <div class="form-field">
-        <input type="password" placeholder="Password" required />
-      </div>
-
-      <div class="form-field">
-        <button class="btn" type="submit">Log in</button>
-      </div>
-    </form>
+    <div class="form-field">
+      <form action="/post" method="post">
+        <input type="email" placeholder="Email / Username" name="email" /><br />
+        <input type="password" placeholder="Password" name="pass" /><br />
+        <button class="btn" type="submit">Log in</button><br />
+      </form>
+    </div>
   </body>
 </html>

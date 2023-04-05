@@ -1,12 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 #bg {
-  color: #47ab11;
+  background-image: url("/background.jpg");
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
-  filter: blur(2px);
+  filter: blur(5px);
 }
 
 body {
@@ -37,11 +38,13 @@ form .form-field::before {
   background-repeat: no-repeat;
 }
 form .form-field:nth-child(1)::before {
+  background-image: url(img/user-icon.png);
   width: 20px;
   height: 20px;
   top: 15px;
 }
 form .form-field:nth-child(2)::before {
+  background-image: url(img/lock-icon.png);
   width: 16px;
   height: 16px;
 }

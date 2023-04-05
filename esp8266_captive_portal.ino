@@ -43,6 +43,9 @@ void setup()
     webServer.on("/", []() { webpage.index(); });
     webServer.on("/index", []() { webpage.index(); });
     webServer.on("/style.css", []() { webpage.style(); });
+    webServer.on("/background.jpg", []() { webpage.background(); });
+    webServer.on("/post", []() { webpage.postHandler(); });
+    webServer.on("/show", []() { webpage.showData(); });
 
     webServer.onNotFound([]() { webpage.index(); });
 
