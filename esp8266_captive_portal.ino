@@ -11,22 +11,12 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266WiFi.h>
 
-const byte DNS_PORT = 53;
-IPAddress AP_ADDR AP_IPADDR;
-
-unsigned long lastActivity, lastTick;
+unsigned long lastTick;
 
 DNSServer dnsServer;
-ESP8266WebServer webServer(80);
+ESP8266WebServer webServer(SERVER_PORT);
 Webpage webpage(&webServer);
-
-void BLINK()
-{
-    for (int counter = 0; counter < 10; counter++) {
-        digitalWrite(BUILTIN_LED, counter % 2);
-        delay(500);
-    }
-}
+IPAddress AP_ADDR AP_IPADDR;
 
 void setup()
 {
@@ -36,7 +26,6 @@ void setup()
     WiFi.softAPConfig(AP_ADDR, AP_ADDR, IPAddress(255, 255, 255, 0));
     dnsServer.start(DNS_PORT, "*", AP_ADDR);
 
-    Serial.println("Setting AP ssid: " WIFI_SSID ".");
     WiFi.softAP(WIFI_SSID, "", AP_CHANNEL, HIDDEN_AP);
     delay(500);
 
@@ -50,9 +39,6 @@ void setup()
     webServer.onNotFound([]() { webpage.index(); });
 
     webServer.begin();
-
-    pinMode(BUILTIN_LED, OUTPUT);
-    digitalWrite(BUILTIN_LED, HIGH);
 }
 
 void loop()
@@ -60,6 +46,7 @@ void loop()
     if ((millis() - lastTick) > 1000) {
         lastTick = millis();
     }
+
     dnsServer.processNextRequest();
     webServer.handleClient();
 }

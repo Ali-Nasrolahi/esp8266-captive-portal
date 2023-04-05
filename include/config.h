@@ -9,6 +9,8 @@
 
 /* Configuration settings */
 #define BAUDRATE 115200
+#define DNS_PORT 53
+#define SERVER_PORT 80
 #define WIFI_SSID "FREE WIFI"
 #define AP_IPADDR (172, 0, 0, 1)
 #define AP_SUBNET (255, 255, 255, 0)

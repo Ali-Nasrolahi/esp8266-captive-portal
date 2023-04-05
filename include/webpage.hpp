@@ -11,7 +11,11 @@
 #include <ESP8266WebServer.h>
 #include <LittleFS.h>
 #include <WString.h>
-
+/**
+ * @class Webpage
+ * @brief Handles Captive Portal's main user interface.
+ *
+ */
 class Webpage
 {
 public:
